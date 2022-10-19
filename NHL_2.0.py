@@ -1,7 +1,6 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-from Concepts import getImage 
 import NHL 
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
@@ -56,7 +55,7 @@ def make_scatter(x, y, images):
 
     # Connects coordinates on the plot to a given image, in this case -- the appropriate team logo from the images column 
     for x_alt, y_win, image in zip(x, y, images):
-        ab = AnnotationBbox(getImage(image), (x_alt, y_win), frameon=False) 
+        ab = AnnotationBbox(get_image(image), (x_alt, y_win), frameon=False) 
         ax.add_artist(ab)  
 
     # Creating a trendline for the scatter plot and printing the equation 

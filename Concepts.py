@@ -33,8 +33,8 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 # plt.show() 
 
 ''' Proof of concept -- logos in place of points '''
-# def getImage(path, zoom = 0.015):
-#     return OffsetImage(plt.imread(path), zoom = zoom) 
+def getImage(path, zoom = 0.015):
+    return OffsetImage(plt.imread(path), zoom = zoom) 
 
 # paths = [
 #     'Toronto.png',
