@@ -3,17 +3,20 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import NHL
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+import NHL_Teams
+from PIL import Image
+
 
 
 def getImage(path, zoom = 0.02):
     return OffsetImage(plt.imread(path), zoom = zoom) 
 
-images = ['New_Jersey.png','Islanders.png', 'New York.png', 'Philly.png', 'Pitsburgh.png', 'Boston.png', 
-            'Buffalo.png', 'Montreal.png', 'Ottawa.png', 'Toronto.png', 'Atlanta.png', 'Carolina.png', 
-            'Florida.png', 'Tampa Bay.png', 'Washington.png', 'Chicago.png', 'Detroit.png', 'Nashville.png', 
-            'St.Louis.png', 'Calgary.png', 'Colorado.png', 'Edmonton.png', 'Vancouver.png', 'Anaheim.png', 
-            'Dallas.png', 'LA.png', 'Phoenix.png', 'San Jose.png', 'Colombus.png', 'Minnesota.png', 'Winnipeg.png', 
-            'Arizona.png', 'Vegas.png']
+images = ['NHL_Teams/New_Jersey.png','NHL_Teams/Islanders.png', 'NHL_Teams/New York.png', 'NHL_Teams/Philly.png', 'NHL_Teams/Pitsburgh.png', 'NHL_Teams/Boston.png', 
+            'NHL_Teams/Buffalo.png', 'NHL_Teams/Montreal.png', 'NHL_Teams/Ottawa.png', 'NHL_Teams/Toronto.png', 'NHL_Teams/Atlanta.png', 'NHL_Teams/Carolina.png', 
+            'NHL_Teams/Florida.png', 'NHL_Teams/Tampa Bay.png', 'NHL_Teams/Washington.png', 'NHL_Teams/Chicago.png', 'NHL_Teams/Detroit.png', 'NHL_Teams/Nashville.png', 
+            'NHL_Teams/St.Louis.png', 'NHL_Teams/Calgary.png', 'NHL_Teams/Colorado.png', 'NHL_Teams/Edmonton.png', 'NHL_Teams/Vancouver.png', 'NHL_Teams/Anaheim.png', 
+            'NHL_Teams/Dallas.png', 'NHL_Teams/LA.png', 'NHL_Teams/Phoenix.png', 'NHL_Teams/San Jose.png', 'NHL_Teams/Colombus.png', 'NHL_Teams/Minnesota.png', 'NHL_Teams/Winnipeg.png', 
+            'NHL_Teams/Arizona.png', 'NHL_Teams/Vegas.png']
 
 x_alts = [250, 89, 13, 39, 846, 33, 597, 52, 236, 289, 997, 354, 3, 7, 10, 
             594, 610, 607, 883, 3432, 5272, 2172, 20, 3694, 435, 243, 1093, 
