@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import Dictionaries
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
-# This is a test change!!
-
 
 def read_clean(csv):
     # reads in a .csv file into a df called game_df
@@ -57,7 +55,7 @@ def get_image(path, zoom=0.02):
 
 
 # Create a scatter plot comparing alt and win percentage, using team logos in place of points
-def make_scatter(x, y, images):
+def make_scatter(x, y, xlab, ylab, images):
 
     # setting up the scatter plot, passing in x and y
     fig, ax = plt.subplots()
@@ -75,11 +73,11 @@ def make_scatter(x, y, images):
     print("Trend Line Equation y=%.6fx+(%.6f)" % (z[0], z[1]))
 
     # Title, labels for x and y axes and gridlines
-    plt.xlabel('Altitude (ft.)')
-    plt.ylabel('Home Win Percentage')
+    plt.xlabel(xlab)
+    plt.ylabel(ylab)
     plt.title('Altitude vs Home Win Percentage for NHL Teams')
 
-    plt.show()
+    # plt.show()
 
     return scattery
 
@@ -87,12 +85,12 @@ def make_scatter(x, y, images):
 # main()
 home_outcomes = read_clean('game.csv')
 
-team_record = record_finder('San Jose')
+team_record = record_finder('Toronto')
 
 # Establishing condensed_outcomes outside the scope of functions
 condensed_outcomes = Dictionaries.condensed_outcomes
 
 scatter_plot = make_scatter(
-    condensed_outcomes['alt'], condensed_outcomes['win_percent'], condensed_outcomes['images'])
+    condensed_outcomes['alt'], condensed_outcomes['win_percent'], 'Altitude (ft.)', 'Home Win Percentage', condensed_outcomes['images'])
 
 imager = get_image(condensed_outcomes['images'], 0.02)
