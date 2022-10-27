@@ -33,30 +33,8 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 # plt.legend(handles=scatter.legend_elements()[0], labels=classes)
 # plt.show()
 
-''' Proof of concept -- logos in place of points '''
-
-
 def getImage(path, zoom=0.015):
     return OffsetImage(plt.imread(path), zoom=zoom)
-
-# paths = [
-#     'Toronto.png',
-#     'Seattle.png',
-#     'Ottawa.png',
-#     'Vancouver.png',
-#     'Calgary.png']
-
-# x = [0, 1, 2, 3, 4]
-# y = [0, 1, 2, 3, 4]
-
-# fig, ax = plt.subplots()
-# ax.scatter(x, y)
-
-# for x0, y0, path in zip(x, y, paths):
-#     ab = AnnotationBbox(getImage(path), (x0, y0), frameon=False)
-#     ax.add_artist(ab)
-
-# plt.show()
 
 
 ''' Plotting Toronto's win pct over five seasons '''
@@ -132,27 +110,27 @@ plt.show()
 # items_2 = items.__add__([45,56,234,123,34,3])
 # print(items_2)
 
-class Stack:
-    def __init__(self):  # Initializes the stack
-        self._items = []
+# class Stack:
+#     def __init__(self):  # Initializes the stack
+#         self._items = []
 
-    def push(self, item):
-        self._items.append(item)
+#     def push(self, item):
+#         self._items.append(item)
 
-    def pop(self):
-        return self._items.pop()
-        # don't uncomment, for clarity only, will break everything :D
-        # return self._items[-1]
-        #self._items = self._items[0:-2]
+#     def pop(self):
+#         return self._items.pop()
+#         # don't uncomment, for clarity only, will break everything :D
+#         # return self._items[-1]
+#         #self._items = self._items[0:-2]
 
-    def __repr__(self):
-        return f'<{type(self).__name__} at 0x{id(self):x}, size={len(self)}>'
+#     def __repr__(self):
+#         return f'<{type(self).__name__} at 0x{id(self):x}, size={len(self)}>'
 
-    def __len__(self):
-        return len(self._items)
+#     def __len__(self):
+#         return len(self._items)
 
 
-s = Stack()
+# s = Stack()
 # s.push('Dave')
 # s.push(42)
 # s.push([3,4,5])
@@ -180,36 +158,35 @@ s = Stack()
 # print(x)
 
 
-class Calculator:
-    def __init__(self):
-        self._stack = Stack()
+# class Calculator:
+#     def __init__(self):
+#         self._stack = Stack()
 
-    def push(self, item):
-        self._stack.push(item)
+#     def push(self, item):
+#         self._stack.push(item)
 
-    def pop(self):
-        return self._stack.pop()
+#     def pop(self):
+#         return self._stack.pop()
 
-    def add(self):
-        self.push(self.pop() + self.pop())
+#     def add(self):
+#         self.push(self.pop() + self.pop())
 
-    def mul(self):
-        self.push(self.pop() * self.pop())
+#     def mul(self):
+#         self.push(self.pop() * self.pop())
 
-    def sub(self):
-        right = self.pop()
-        self.push(self.pop() - right)
+#     def sub(self):
+#         right = self.pop()
+#         self.push(self.pop() - right)
 
-    def div(self):
-        right = self.pop()
-        self.push(self.pop() / right)
+#     def div(self):
+#         right = self.pop()
+#         self.push(self.pop() / right)
 
 
-calc = Calculator()
-calc.push(4)
-calc.push(6)
+# calc = Calculator()
+# calc.push(4)
+# calc.push(6)
 
-print(calc.add)
 
 # a = [3, 4, 5]
 # b = [a]
