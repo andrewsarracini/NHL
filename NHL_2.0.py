@@ -67,17 +67,15 @@ def make_scatter(x, y, xlab, ylab, images):
         ax.add_artist(ab)
 
     # Creating a trendline for the scatter plot and printing the equation
-    z = np.polyfit(x, y, 1)
-    p = np.poly1d(z)
-    plt.plot(x, p(x), 'r--')
-    print("Trend Line Equation y=%.6fx+(%.6f)" % (z[0], z[1]))
+    a, b = np.polyfit(x, y, 1)
+    plt.plot(x, a*x+b)
 
     # Title, labels for x and y axes and gridlines
     plt.xlabel(xlab)
     plt.ylabel(ylab)
     plt.title('Altitude vs Home Win Percentage for NHL Teams')
 
-    # plt.show()
+    plt.show()
 
     return scattery
 
